@@ -1,7 +1,7 @@
 
 var mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/tesina_dev');
+mongoose.connect('mongodb://localhost/tesina');
 
 var UserSchema = new mongoose.Schema({
 	name : String,
