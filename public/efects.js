@@ -90,7 +90,7 @@ function register(){
 	else{
 		//Hacemos la peticion
 		json = {"name":name, "pass":pass, "email":email};
-		$.post( "http://127.0.0.1:3001/tesina/createuser", json, "json" )
+		$.post( "/tesina/createuser", json, "json" )
 			.done(function (data) {
 				$('#succes').html("<p><b>Saved Correctly</b></p>");
 			})
@@ -110,7 +110,7 @@ function login(){
 		$('#errorlogin').html("Enter a User/Password");
 	else{
 		json = {"name":nameUser, "pass":pass};
-		$.post( "http://127.0.0.1:3001/tesina/login", json, 
+		$.post( "/tesina/login", json, 
 			function( data ) {
 				if(remember){
 					localStorage.setItem('alias',data[0].name);

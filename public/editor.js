@@ -555,7 +555,7 @@ function save(file, name_user){
         jsonCircuit = makeJSONcircuit();
         json = { nameUser : name_user, fileName : file, circuit : jsonCircuit };
         
-        $.post( "http://127.0.0.1:3001/tesina/save", json, "json")
+        $.post( "/tesina/save", json, "json")
         .done(function(data){
             $("#nmAlert h4").html("Saved correctly!");
             $("#nmAlert").addClass("in");
@@ -574,10 +574,10 @@ function silentSave(file, name_user){
     $.ajax({
         async: false,
         type: "POST",
-        url: "http://127.0.0.1:3001/tesina/save",
+        url: "/tesina/save",
         data: json
     });
-    //$.post( "http://127.0.0.1:3001/tesina/save", json, "json");
+    //$.post( "/tesina/save", json, "json");
 }
 function makeJSONcircuit () {
     circuit = {
@@ -661,7 +661,7 @@ function load(){
     
     if(nameUser){
         $.ajax({
-            url: "http://127.0.0.1:3001/tesina/files/"+nameUser,
+            url: "/tesina/files/"+nameUser,
             type: "GET"
         })
         .done(function(data) {
@@ -974,12 +974,12 @@ function validate () {
         else{
             json = { nameUser : nameUser, fileName : fileName };
 
-            $.post( "http://127.0.0.1:3001/tesina/makeFile", json, "json")
+            $.post( "/tesina/makeFile", json, "json")
             .done(function(data){
                 text = "<h3 style='color: green'>Compiled correctly!</h3>";
                 text +="<ul>"+
-                    "<li><a target='_blank' href='http://127.0.0.1:3001/files/"+nameUser+"/"+fileName+".zip'>Download code</a></li>"+
-                    "<li><a target='_blank' href='http://127.0.0.1:3001/files/"+nameUser+"/"+fileName+".json'>Download JSON</a></li></ul>";
+                    "<li><a target='_blank' href='/files/"+nameUser+"/"+fileName+".zip'>Download code</a></li>"+
+                    "<li><a target='_blank' href='/files/"+nameUser+"/"+fileName+".json'>Download JSON</a></li></ul>";
                 bootbox.alert(text);
             })
             .fail(function(data){
@@ -1132,13 +1132,13 @@ function startstopSimulate () {
     fileName = getNameSavedFile();
     $.ajax({
         type: "PUT", //PUT no funciona, el server recive OPTIONS
-        url: "http://127.0.0.1:3001/tesina/simulator/start",
+        url: "/tesina/simulator/start",
         data: { nameUser: nameUser, fileName: fileName, state : simulateOn }
     })
     .fail(function( msg ) {
         $.ajax({
         type: "POST", //PUT no funciona, el server recive OPTIONS
-        url: "http://127.0.0.1:3001/tesina/simulator/start",
+        url: "/tesina/simulator/start",
         data: { nameUser: nameUser, fileName: fileName, state : simulateOn }
         })
         .fail(function( msg ) {
@@ -1154,7 +1154,7 @@ function getSimulateData() {
 
     //recogemos los datos de los componentes
     $.ajax({
-        url: "http://127.0.0.1:3001/tesina/simulator/"+nameUser+"/"+fileName,
+        url: "/tesina/simulator/"+nameUser+"/"+fileName,
     })
     .done(function( data ) { showResults(data); })
     .fail(function (err) {$("#consoleout").prepend("Data not found!<br>\n"); simulate();});
