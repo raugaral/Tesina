@@ -1,0 +1,198 @@
+body {
+    background-color: gainsboro;
+    overflow: hidden;
+}
+#top{
+	background-color: currentcolor;
+	padding-top: 3px;
+}
+#logo{
+	color: white;
+	width: 195px;
+}
+#topRight{
+	width: 10%;
+}
+#topLeft{
+	padding-top: 5px;
+	text-align: center;
+}
+#topLeft>p{
+	color: #D8D8D8;
+}
+#botonera{
+	width: 10%;
+	min-width: 210px;
+	background-color: currentcolor;
+	z-index: 10;
+	padding-left: 0;
+}
+#botonera>ul{
+	color: white;
+	padding-top: 20px;
+}
+#botonera>ul a{
+	color: white;
+}
+#botonera>ul a:hover{
+	color: #DADADA;
+	text-decoration: none;
+}
+.dropdown-header{
+	cursor: pointer;
+}
+.list-group-item{
+	background-color: transparent;
+	padding: 0;
+	border: none;
+}
+#botonera .divider {
+	padding: 10px;
+}
+#bottom{
+	background-color: currentcolor;
+	height: 20;
+	padding: 0 10 10 10;
+}
+#bottom>div{
+	color: white;
+}
+
+#canvas{
+	position: absolute;
+	height: 95%;
+	width: 100%;
+	overflow: hidden;
+}
+#canvas>svg{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+#ethernetOpt{
+	margin-top: 20px;
+}
+
+
+#rmenu li:hover{
+	cursor: pointer;
+	background-color: #428bca;
+}
+#rmenuConn li:hover{
+	cursor: pointer;
+	background-color: #428bca;
+}
+
+#cargar tbody>tr{
+	cursor: hand;
+}
+
+#console {
+	height:90%;
+	float:right;
+	width: 400px;
+	background-color: #fff;
+	z-index: 10;
+	margin-top: 10px;
+	position: relative;
+}
+
+#consoleout{
+	overflow: auto;
+	height: 88%;
+	width: 100%;
+	margin-top: 10;
+}
+
+.nmAlert {
+	opacity: 0;
+	-webkit-transition: opacity 0.5s linear;
+	-moz-transition: opacity 0.5s linear;
+	-o-transition: opacity 0.5s linear;
+	transition: opacity 0.5s linear;
+	position: absolute;
+	top: 35;
+	left: 225;
+}
+.nmAlert.in {
+  	opacity: 1;
+}
+
+.alert-message
+{
+    margin: 20px 0;
+    padding: 20px;
+    border-left: 3px solid #eee;
+    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+	border-radius: 6px;
+}
+.alert-message h4
+{
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+.alert-message p:last-child
+{
+    margin-bottom: 0;
+}
+.alert-message code
+{
+    background-color: #fff;
+    border-radius: 3px;
+}
+.alert-message-success
+{
+    background-color: rgba(244, 253, 240, 0.8);
+    border-color: #3C763D;
+}
+.alert-message-success h4
+{
+    color: #3C763D;
+}
+
+
+
+.disabled{
+	cursor: not-allowed;
+}
+.show {
+    z-index:1000;
+    position: absolute;
+    background: #eee;
+}
+
+.hide {
+    display: none;
+}
+
+.bootbox .modal-content {
+	width: 400px;
+}
+
+.dropdown-header{
+	font-size: 16px;
+}
+.badge{
+	float: right;
+}
+
+
+@media (min-width:768px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (min-width:992px) {
+    .container {
+        width: 100%;
+    }
+}
+
+@media (min-width:1200px) {
+    .container {
+        width: 100%;
+    }
+}
+

@@ -1,0 +1,7 @@
+doctype html
+h1 Todos los usuarios registrados
+
+body
+    ul 
+       each user in users
+        li #{user.name} (#{user.email})
